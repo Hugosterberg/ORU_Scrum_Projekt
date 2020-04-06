@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package oru_scrum_projekt;
-
+// ja hallå funkar de
 /**
  *
  * @author HugoO
