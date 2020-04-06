@@ -23,7 +23,8 @@ public class ORU_Scrum_Projekt {
         //test
         //testigen
         //gabbetestar
+        //barretestar
     }
-    // barre testar
+    
     
 }
