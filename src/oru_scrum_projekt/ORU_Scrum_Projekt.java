@@ -19,6 +19,7 @@ public class ORU_Scrum_Projekt {
         System.out.println("Hej");
         //tjenare hugo! hur är läget?
         // tjaaaa för faan!/gabbe
+        System.out.println("Hallå igen");
     }
     
 }
