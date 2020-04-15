@@ -7,7 +7,7 @@ package oru_scrum_projekt;
 
 /**
  *
- * @author khali
+ * @author khali ali Jama
  */
 public class Kalender extends javax.swing.JFrame {
              public static String datumMote;
