@@ -29,6 +29,7 @@ public class InloggadAnvandare extends javax.swing.JFrame {
 
         btnSkrivInlagg = new javax.swing.JButton();
         btnTillbaka = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +47,8 @@ public class InloggadAnvandare extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -54,17 +57,21 @@ public class InloggadAnvandare extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(btnSkrivInlagg))
+                        .addComponent(btnSkrivInlagg)
+                        .addGap(27, 27, 27)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addComponent(btnTillbaka)))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addComponent(btnSkrivInlagg)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSkrivInlagg)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                 .addComponent(btnTillbaka)
                 .addContainerGap())
@@ -75,7 +82,7 @@ public class InloggadAnvandare extends javax.swing.JFrame {
 
     private void btnSkrivInlaggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivInlaggActionPerformed
 this.dispose();
-new SkrivInlaggAnvandare().setVisible(true);
+    new SkrivInlaggAnvandare().setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_btnSkrivInlaggActionPerformed
 
@@ -122,5 +129,6 @@ new Startsida().setVisible(true);// TODO add your handling code here:
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSkrivInlagg;
     private javax.swing.JButton btnTillbaka;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
