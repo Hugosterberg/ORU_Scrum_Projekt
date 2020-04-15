@@ -20,6 +20,7 @@ public class ORU_Scrum_Projekt {
         //tjenare hugo! hur är läget?
         // tjaaaa för faan!/gabbe
         System.out.println("Hallå igen");
+        new Startsida().setVisible(true);
         //test
         //testigen
         //gabbetestar
