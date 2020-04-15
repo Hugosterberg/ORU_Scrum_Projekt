@@ -186,7 +186,8 @@ public class Startsida extends javax.swing.JFrame {
     }//GEN-LAST:event_LosenordActionPerformed
 
     private void LoggainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoggainActionPerformed
-
+this.dispose();
+new InloggadAnvandare().setVisible(true);
 
         
     }//GEN-LAST:event_LoggainActionPerformed
