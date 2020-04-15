@@ -41,6 +41,7 @@ public class SkrivInlaggAnvandare extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtPubliceradeInlagg.setEditable(false);
         txtPubliceradeInlagg.addTextListener(new java.awt.event.TextListener() {
             public void textValueChanged(java.awt.event.TextEvent evt) {
                 txtPubliceradeInlaggTextValueChanged(evt);
