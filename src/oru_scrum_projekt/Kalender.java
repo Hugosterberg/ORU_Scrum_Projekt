@@ -5,6 +5,12 @@
  */
 package oru_scrum_projekt;
 
+
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+
 /**
  *
  * @author khali ali Jama
@@ -65,9 +71,10 @@ public class Kalender extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+      
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
+        new InloggadAnvandare().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
