@@ -65,6 +65,11 @@ public class InformellaForumet extends javax.swing.JFrame {
         });
 
         jCmboValjKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Galet", "Roligt", "Heta studenter", "Övrigt" }));
+        jCmboValjKategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCmboValjKategoriActionPerformed(evt);
+            }
+        });
 
         lblValjKategori.setText("Välj kategori");
 
@@ -128,14 +133,12 @@ public class InformellaForumet extends javax.swing.JFrame {
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel2)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(valjKategoriAttVisa, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18))
+                        .addComponent(valjKategoriAttVisa, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtNamn, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPublicera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(jLabel3))
-                    .addContainerGap(28, Short.MAX_VALUE)))
+                    .addContainerGap(46, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,6 +209,10 @@ public class InformellaForumet extends javax.swing.JFrame {
         this.dispose();
         new InloggadAnvandare().setVisible(true);
     }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void jCmboValjKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmboValjKategoriActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCmboValjKategoriActionPerformed
 
     /**
      * @param args the command line arguments

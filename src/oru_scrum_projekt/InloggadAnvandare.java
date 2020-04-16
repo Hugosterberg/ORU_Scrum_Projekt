@@ -135,11 +135,13 @@ new Kalender().setVisible(true); // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnInformelltForumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformelltForumActionPerformed
-        // TODO add your handling code here:
+       this.dispose(); 
+       new InformellaForumet().setVisible(true); //TODO add yoyr handling code here:
     }//GEN-LAST:event_btnInformelltForumActionPerformed
 
     private void btnFormelltForumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFormelltForumActionPerformed
-        // TODO add your handling code here:
+       this.dispose();
+       new FormellaForumet().setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_btnFormelltForumActionPerformed
 
     /**
