@@ -53,6 +53,11 @@ public class FormellaForumet extends javax.swing.JFrame {
         });
 
         jCmboValjKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajs", "Liten", "Kärlek", "Hat" }));
+        jCmboValjKategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCmboValjKategoriActionPerformed(evt);
+            }
+        });
 
         lblValjKategori.setText("Välj kategori");
 
@@ -201,6 +206,10 @@ new InloggadAnvandare().setVisible(true);// TODO add your handling code here:
     private void txtNamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNamnActionPerformed
+
+    private void jCmboValjKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmboValjKategoriActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCmboValjKategoriActionPerformed
 
     /**
      * @param args the command line arguments
