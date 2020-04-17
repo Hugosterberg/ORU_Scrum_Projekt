@@ -51,6 +51,11 @@ public class InloggadAnvandare extends javax.swing.JFrame {
         });
 
         jButton1.setText("Boka möte");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Kalender");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +148,11 @@ new Kalender().setVisible(true); // TODO add your handling code here:
        this.dispose();
        new FormellaForumet().setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_btnFormelltForumActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+             this.dispose();
+       new BokaMote().setVisible(true);  // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
