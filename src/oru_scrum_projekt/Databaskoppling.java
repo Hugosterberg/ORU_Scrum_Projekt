@@ -11,8 +11,9 @@ import java.sql.*;
  * @author HugoO
  */
 public class Databaskoppling {
+
     
-    public static Connection connect() throws ClassNotFoundException{
+   public static Connection connect() throws ClassNotFoundException{
         
         Connection con = null;
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -28,6 +29,6 @@ public class Databaskoppling {
         }
         
         return con;
-    }
+    } 
     
 }
