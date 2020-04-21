@@ -62,7 +62,7 @@ public class ORU_Scrum_Projekt {
                 myConn.close();
             }
         }
-        connect();
+        
         new Startsida().setVisible(true);
     }
     
