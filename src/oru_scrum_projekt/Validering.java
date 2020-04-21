@@ -28,7 +28,8 @@ public class Validering {
     }
     
     public boolean RattLosenord(JTextField namn, JPasswordField losenord){
-       // String namn = 
+        String namn = anvandarnamn.getText();
+        String 
         try{
              ResultSet anvandarnamn = con.createStatement().executeQuery("SELECT LÖSENORD FROM ANVÄNDARNAMN WHERE NAMN = ");
         }
