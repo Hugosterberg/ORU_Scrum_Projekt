@@ -77,9 +77,9 @@ public class Kalender extends javax.swing.JFrame {
 
         DateFormat formatDatum = new SimpleDateFormat("yyyy-MM-dd");
         //Kommenterar bort eftersom programmet ej går att skapa med denna kod (error)
-        /*String datum = formatDatum.format(calender.getDate());
+        String datum = formatDatum.format(calender.getDate());
         System.out.println(datum);
-        datumMote = datum;*/
+        datumMote = datum;
 
         new Moten().setVisible(true);
 
