@@ -5,11 +5,18 @@
  */
 package oru_scrum_projekt;
 
+import java.sql.*;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gabrielbarsham
  */
 public class LoggaIn extends javax.swing.JFrame {
+    
+    public static Connection con;
+    public static int anvandarID;
 
     /**
      * Creates new form LoggaIn
@@ -30,15 +37,13 @@ public class LoggaIn extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        Anvandarnamn = new javax.swing.JTextField();
+        Namnfalt = new javax.swing.JTextField();
         Losenord = new javax.swing.JPasswordField();
         Loggain = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 51));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/gabrielbarsham/Desktop/Startsida3.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -62,26 +67,18 @@ public class LoggaIn extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 51));
         jLabel2.setText("Välkommen till Informatikforumet");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/gabrielbarsham/Desktop/Startsida_Bild2.jpg")); // NOI18N
-
         jLabel3.setFont(new java.awt.Font("Rockwell", 1, 13)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Lösenord:");
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 1, 13)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Andvändarnamn:");
+        jLabel4.setText("Namn:");
 
-        Anvandarnamn.setBackground(new java.awt.Color(255, 255, 255));
-        Anvandarnamn.setForeground(new java.awt.Color(0, 0, 0));
-        Anvandarnamn.addActionListener(new java.awt.event.ActionListener() {
+        Namnfalt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnvandarnamnActionPerformed(evt);
+                NamnfaltActionPerformed(evt);
             }
         });
 
-        Losenord.setBackground(new java.awt.Color(255, 255, 255));
-        Losenord.setForeground(new java.awt.Color(0, 0, 0));
         Losenord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LosenordActionPerformed(evt);
@@ -118,7 +115,7 @@ public class LoggaIn extends javax.swing.JFrame {
                                     .addComponent(jLabel3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Anvandarnamn)
+                                    .addComponent(Namnfalt)
                                     .addComponent(Losenord, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -132,7 +129,7 @@ public class LoggaIn extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Anvandarnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Namnfalt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,22 +174,47 @@ public class LoggaIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AnvandarnamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnvandarnamnActionPerformed
+    private void NamnfaltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamnfaltActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AnvandarnamnActionPerformed
+    }//GEN-LAST:event_NamnfaltActionPerformed
 
     private void LosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LosenordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LosenordActionPerformed
 
     private void LoggainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoggainActionPerformed
-        //String namn = Anvandarnamn.getText();
-        //String losenord = Losenord.getPassword();
-        
-        this.dispose();
-        new InloggadAnvandare().setVisible(true);
+        if(!Validering.tomRuta(Namnfalt) && !Validering.tomLosenord(Losenord))
+        {
+        ResultSet anvandare = DatabasFetch.fetchAnvandarInfo(con, Namnfalt.getText());
 
+        try{
+            anvandare.next();
+            if(anvandare == null)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Namnet finns inte registrerat");
+            }
+            else
+            {
+                char[] rattLosenord = anvandare.getString("LÖSENORD").toCharArray();
+                char[] skrivetLosenord = Losenord.getPassword();
+                
+                if(Arrays.equals(rattLosenord, skrivetLosenord))
+                {
+                    anvandarID = DatabasFetch.fetchId(con, Namnfalt.getText());
+                    new InloggadAnvandare().setVisible(true);
+                    this.dispose();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(rootPane, "Fel lösenord");
+                }
+            }
+        }
+        catch (SQLException e){
+            
+        }
         
+        }
     }//GEN-LAST:event_LoggainActionPerformed
 
     /**
@@ -231,9 +253,9 @@ public class LoggaIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Anvandarnamn;
     private javax.swing.JButton Loggain;
     private javax.swing.JPasswordField Losenord;
+    private javax.swing.JTextField Namnfalt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
