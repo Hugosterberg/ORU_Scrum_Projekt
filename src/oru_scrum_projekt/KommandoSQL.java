@@ -73,5 +73,20 @@ public class KommandoSQL {
             System.out.println(e);
         }
         return post_id;
-    }    
+    }   
+        public static ResultSet fetchPost(Connection con) {
+        //Returnerar bara en rad
+        Statement stmt = null;
+        String query = "SELECT * FROM INLÄGG";
+        ResultSet rs = null;
+        try {
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+        }
+        catch(SQLException e) {
+            System.out.println("EERROR TO FETCH POST");
+        }
+        return rs;
+    }
+    
 }
