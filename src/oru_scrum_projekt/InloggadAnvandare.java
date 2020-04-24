@@ -5,17 +5,24 @@
  */
 package oru_scrum_projekt;
 
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author HugoO
  */
 public class InloggadAnvandare extends javax.swing.JFrame {
 
+    //private Connection con;
+    //private int anvandarID;
     /**
      * Creates new form InloggadAnvandare
      */
-    public InloggadAnvandare() {
+    public InloggadAnvandare() throws SQLException {
         initComponents();
+        //this.con = con;
+        //this.anvandarID = anvandarID;
     }
 
     /**
@@ -124,19 +131,19 @@ public class InloggadAnvandare extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSkrivInlaggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivInlaggActionPerformed
-this.dispose();
-    new SkrivInlaggAnvandare().setVisible(true);
+        this.dispose();
+        new SkrivInlaggAnvandare().setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_btnSkrivInlaggActionPerformed
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
-this.dispose();
-new LoggaIn().setVisible(true);// TODO add your handling code here:
+        this.dispose();
+        new LoggaIn().setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        this.dispose();
-new Kalender().setVisible(true); // TODO add your handling code here:
+        new Kalender().setVisible(true); // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnInformelltForumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformelltForumActionPerformed
@@ -150,7 +157,7 @@ new Kalender().setVisible(true); // TODO add your handling code here:
     }//GEN-LAST:event_btnFormelltForumActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-             this.dispose();
+       this.dispose();
        new BokaMote().setVisible(true);  // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -183,8 +190,12 @@ new Kalender().setVisible(true); // TODO add your handling code here:
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InloggadAnvandare().setVisible(true);
+            public void run(){
+                try {
+                    new InloggadAnvandare().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InloggadAnvandare.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

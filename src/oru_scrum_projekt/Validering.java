@@ -27,6 +27,30 @@ public class Validering {
         }
     }
     
+    public static boolean tomRuta (JTextField rutaAttKolla) {
+        boolean result = false;
+        
+        if (rutaAttKolla.getText().isEmpty()) {
+            
+            result = true;
+            JOptionPane.showMessageDialog(rutaAttKolla, "Rutan är tom");
+            rutaAttKolla.requestFocus();
+        }
+
+        //Return a boolean
+        return result;
+    }
+    
+    public static boolean tomLosenord(JPasswordField rutaAttKolla) {
+        boolean result = false;
+        if(rutaAttKolla.getPassword().length == 0) {
+            result = true;
+            JOptionPane.showMessageDialog(rutaAttKolla, "Skriv in ditt lösenord");
+            rutaAttKolla.requestFocus();
+        }
+        return result;
+    }
+    
     public boolean RattLosenord(JTextField namn, JPasswordField losenord){
         String valtNamn = namn.getText();
         String valtLosenord = losenord.getPassword().toString();
@@ -42,5 +66,21 @@ public class Validering {
         
     }
     
+    /*public boolean KontrolleraLosenord(JTextField Anvandarnamn, String Losenord) {
+        boolean passwordIsCorrect = true;
+            String username = Anvandarnamn.getText();
+            String password = Losenord;
+            String correctPassword = "SELECT LOSENORD FROM USERS WHERE ANVANDARNAMN = '" + username + "';";
+            correctPassword = fdb.fetchSingle(correctPassword);
+            if (!(password.equals(correctPassword))) {
+                passwordIsCorrect = false;
+                JOptionPane.showMessageDialog(null, "Fel lösen. Försök igen");
+            }
+            else {
+                 passwordIsCorrect = true ;
+            }
+              return passwordIsCorrect ;           
+                }
+    }*/
     
 }
