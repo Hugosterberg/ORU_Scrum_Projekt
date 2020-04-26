@@ -202,7 +202,11 @@ public class FormellaForumet extends javax.swing.JFrame {
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
 this.dispose();
-new InloggadAnvandare().setVisible(true);// TODO add your handling code here:
+        try {
+            new InloggadAnvandare().setVisible(true);// TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(FormellaForumet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
     private void btnPubliceraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPubliceraActionPerformed

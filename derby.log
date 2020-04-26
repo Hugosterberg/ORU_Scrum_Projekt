@@ -1,0 +1,32 @@
+Thu Apr 16 23:44:36 CEST 2020 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Thu Apr 16 23:44:37 CEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0171-84f3-6851-00002797f7cb 
+on database directory /Users/gabrielbarsham/NetBeansProjects/Oru_Scrum_Projekt/ORU_Scrum_Projekt/Databasen with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+Loaded from file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_191-b12
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.13.6
+derby.system.home=/Users/gabrielbarsham/NetBeansProjects/Oru_Scrum_Projekt/ORU_Scrum_Projekt
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Thu Apr 16 23:44:39 CEST 2020:
+Shutting down instance a816c00e-0171-84f3-6851-00002797f7cb on database directory /Users/gabrielbarsham/NetBeansProjects/Oru_Scrum_Projekt/ORU_Scrum_Projekt/Databasen with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+Thu Apr 16 23:44:39 CEST 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = Databasen), (DRDAID = {2}), Database 'Databasen' shutdown.
+----------------------------------------------------------------
+Thu Apr 16 23:44:53 CEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 560740aa-0171-84f3-6851-00002797f7cb 
+on database directory /Users/gabrielbarsham/NetBeansProjects/Oru_Scrum_Projekt/ORU_Scrum_Projekt/Databasen with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+Loaded from file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_191-b12
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.13.6
+derby.system.home=/Users/gabrielbarsham/NetBeansProjects/Oru_Scrum_Projekt/ORU_Scrum_Projekt
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------

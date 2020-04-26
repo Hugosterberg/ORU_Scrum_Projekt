@@ -63,7 +63,7 @@ public class ORU_Scrum_Projekt {
             }
         }
         
-        new Startsida().setVisible(true);
+        new LoggaIn().setVisible(true);
     }
     
     

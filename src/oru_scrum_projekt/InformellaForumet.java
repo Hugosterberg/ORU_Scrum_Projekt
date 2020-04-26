@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package oru_scrum_projekt;
+import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -207,7 +210,11 @@ public class InformellaForumet extends javax.swing.JFrame {
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         this.dispose();
-        new InloggadAnvandare().setVisible(true);
+        try {
+            new InloggadAnvandare().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(InformellaForumet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
     private void jCmboValjKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmboValjKategoriActionPerformed

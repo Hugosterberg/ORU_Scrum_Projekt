@@ -5,7 +5,10 @@
  */
 package oru_scrum_projekt;
 
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -134,7 +137,11 @@ public class BokaMote extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 this.dispose();
-new InloggadAnvandare().setVisible(true);        // TODO add your handling code here:
+        try {
+            new InloggadAnvandare().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(BokaMote.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

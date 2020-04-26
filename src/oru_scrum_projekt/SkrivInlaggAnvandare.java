@@ -5,6 +5,10 @@
  */
 package oru_scrum_projekt;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author HugoO
@@ -152,7 +156,11 @@ public class SkrivInlaggAnvandare extends javax.swing.JFrame {
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
 this.dispose();
-new InloggadAnvandare().setVisible(true);// TODO add your handling code here:
+        try {
+            new InloggadAnvandare().setVisible(true);// TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(SkrivInlaggAnvandare.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
     private void btnPubliceraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPubliceraActionPerformed

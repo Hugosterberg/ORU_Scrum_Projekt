@@ -6,8 +6,11 @@
 package oru_scrum_projekt;
 
 
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -100,7 +103,11 @@ public class Kalender extends javax.swing.JFrame {
     }   
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
-        new InloggadAnvandare().setVisible(true);
+                 try {
+                     new InloggadAnvandare().setVisible(true);
+                 } catch (SQLException ex) {
+                     Logger.getLogger(Kalender.class.getName()).log(Level.SEVERE, null, ex);
+                 }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
